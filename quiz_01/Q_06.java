@@ -39,6 +39,11 @@ public class Q_06 {
             }
         }
         System.out.println(A + " + " + B + " = " + (A + B));
+
+        // -----------------------------------------------------
+        int intA = sc.nextInt();
+        int intB = sc.nextInt();
+        // System.out.println(intA + "+" + intB = (intA+intB));
     }
 }
 

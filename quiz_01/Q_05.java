@@ -36,5 +36,11 @@ public class Q_05 {
         System.out.println(d + "원 : " + coin + "개");
         System.out.println("남은 금액 : " + cash + "원");
 
+        //===============================
+
+        System.out.println("1000원 : " + (money/1000) + "개");
+        coin = money % 1000;
+        System.out.println("남은 금액 : " + cash + "원");
+
     }
 }

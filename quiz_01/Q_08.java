@@ -24,9 +24,20 @@ public class Q_08 {
         int star = sc.nextInt();
         int j = 1;
         String k = "*";
-        for (int i =1; i <= star; i++) {
+        for (int i = 1; i <= star; i++) {
             System.out.println(k.repeat(i));
         }
+        // --------------------------------------------
+        // star = "*".repeat(j);
+        // System.out.println(star);
+        //--------------------------------------
+        for (int i = 1; i <= star; i++) {
+            // for (int i = 1; k <= i; i++) {
+                // star = star + "*";
+            }
+            System.out.println(star);
+            // star = "";
+        }
     }
-}
+
 

@@ -21,5 +21,11 @@ public class Q_10 {
         } else {
             System.out.println("잘못 입력하셨습니다.");
         }
+        //---------------------------------------------
+        int dan = sc.nextInt();
+        for (int i = 1; i <= 9; i++) {
+            int value = dan * i;
+            System.out.println(dan + "x" + i + "=" + value);
+        }
     }
 }

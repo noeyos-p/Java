@@ -50,5 +50,22 @@ public class Q_13 {
             B = B + C;
             System.out.println("요리완료 시간 " + A + "시 " + B + "분");
         }
+        //-------------------------------------------------------------------
+
+        System.out.println("시 입력");
+        int h = sc.nextInt();
+        System.out.println("분 입력");
+        int m = sc.nextInt();
+        System.out.println("걸리는 시간 입력");
+        int t = sc.nextInt();
+        // 총 분으로 전환
+        int totalTime = (h * 60) + m + t;
+        // 요리 종료 시간 -> 분은 버리고 시간만 계산
+        h = totalTime / 60;
+        // 24시간제 이니까 24로 나눈 나머지 취하기
+        h = h % 24;
+        // 요리 종료 분
+        m = t % 60;
+        System.out.println(h + " " + m);
     }
 }

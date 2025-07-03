@@ -34,5 +34,15 @@ public class Q_11 {
         } else {
             System.out.println("F");
         }
+
+        // ------------------------------------
+
+        int scoore = sc.nextInt();
+        String grade = "";
+        if (scoore >= 90) {
+            grade = "A";
+        } else if (scoore >= 90) {
+            grade = "B";
+        }
     }
 }

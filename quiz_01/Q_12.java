@@ -39,7 +39,7 @@ public class Q_12 {
             M = 60 - (45 - M);
             if (H > 23) {
                 H = H - 24;
-            } else if (0 > H) {
+            } else if (H < 0) {
                 H = 24 + H;
             }
             if (M > 59)
@@ -48,6 +48,23 @@ public class Q_12 {
         } else {
             System.out.println(H + "시 " + (M - 45) + "분");
         }
+
+        //-------------------------------------------------------------------------
+
+        System.out.println("시 입력");
+        int h = sc.nextInt();
+        System.out.println("분 입력");
+        int m = sc.nextInt();
+        if (m >= 45) {
+            m = m - 45;
+        } else if (h == 0 && m < 45) {
+            h = 23;
+            m = m + 15;
+        } else {
+            h = h - 1;
+            m = m + 15;
+        }
+        System.out.println(h + " " + m);
     }
 }
 

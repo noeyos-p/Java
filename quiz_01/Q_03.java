@@ -9,6 +9,8 @@ public class Q_03 {
             }
             System.out.println(i);
         }
-
+        for (int k = 2; k <= 20; k = k + 2) {
+            System.out.println(k);
+        }
     }
 }

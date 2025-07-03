@@ -65,5 +65,65 @@ public class Q_14 {
             }
 
         }
+
+        // ------------------------------------------------------------
+        // 주사위 3개 값이 순서대로 들어옴
+        // 중복은 허용
+        // a == b && b == c
+        // -> 참 : 3개의 값이 모두 같음
+        // a == b || b == c || a == c
+        // -> 참 : 2개의 값이 모두 같음
+
+        // true의 수를 셈
+        // a == b max =a; same = same + 1;
+        // b == c max =b; same = same + 1;
+        // a == c max =c; same = same + 1;
+        // -> 3개의 값이 모두 같을 때 same = 3
+        // -> 2개의 값이 모두 같을 때 same = 1
+        // -> 모두 다를때 same = 0
+        System.out.println("1");
+        int aA = sc.nextInt();
+        System.out.println("2");
+        int bB = sc.nextInt();
+        System.out.println("3");
+        int cC = sc.nextInt();
+        // 몇 개가 일치하는지 카운트 할 변수
+        int sameCount = 0;
+        // 상금에 사용할 주사위 눈 값
+        int dice_number = 0;
+        int max = Integer.MIN_VALUE;
+        // 총 상금 넣을
+        int s;
+        // 순서대로 같은지 비교하면서 count
+        if (aA == bB) {
+            sameCount = sameCount + 1;
+            dice_number = aA;
+        }
+        if (cC == bB) {
+            sameCount = sameCount + 1;
+            dice_number = bB;
+        }
+        if (aA == cC) {
+            sameCount = sameCount + 1;
+            dice_number = aA;
+        }
+        switch (sameCount) {
+            case 3 :
+                // 3개 다 일치
+                s = 10000 + (dice_number) * 1000;
+                break;
+            case 2 :
+                // 2개  일치
+                s = 1000 + (dice_number) * 100;
+                break;
+            case 0 :
+                // 0개 일치
+                // 가장 큰 주사위를 찾아야 함
+                if (aA > max) max = aA;
+                if (bB > max) max = bB;
+                if (cC > max) max = cC;
+                s = max * 100;
+                break;
+        }
     }
 }

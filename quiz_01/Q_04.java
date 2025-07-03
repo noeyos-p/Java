@@ -35,7 +35,7 @@ public class Q_04 {
 
         for (int a = 1; a <= n; a++) {
             for (int b = 1; b <= a; b++) {
-                sum += b;
+                sum += b; // sum = sum + b;
             }
         }
         System.out.println(sum);

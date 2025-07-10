@@ -47,8 +47,45 @@ public class VendingMachineMain {
                 break;
             } else {
                 userMenu();
+                userMenu2();
             }
 
+        }
+    }
+
+    private static void userMenu2() {
+        while (true) {
+            System.out.println("1:계속구매하기 2:금액추가하기 3:잔돈반환하기");
+            System.out.println("번호를 입력하세요:");
+            int num = sc.nextInt(); // 위의 메뉴 중 숫자를 입력함
+            switch (num) {
+                case 1:
+                    for (int j = 0; j < COUNT; j++) {
+                        if (choice < price[j]) {
+                            System.out.println("잔액이 부족합니다!");
+                            System.out.println("잔액:" + choice);
+                            break;
+                        } else {
+                            getInfo();
+                            userMenu();
+                            break;
+                        }
+                    } continue;
+                case 2:
+                    System.out.println("얼마를 추가하시겠습니까?");
+                    int coin = sc.nextInt();
+                    choice = choice + coin;
+                    System.out.println(coin + "원이 추가되었습니다.");
+                    System.out.println("총 금액:" + choice);
+                    getInfo();
+                    userMenu();
+                    continue;
+                case 3:
+                    System.out.println("거스름 돈 " + choice + "원이 반환 됩니다.");
+                    choice = 0;
+                    System.out.println("감사합니다! 다음에 또 이용해주세요!!");
+                    return;
+            }
         }
     }
 
@@ -67,32 +104,36 @@ public class VendingMachineMain {
     private static void userMenu() {
         while (true) {
             System.out.println("사용자 페이지");
-            System.out.println("메뉴 입력:");
+            System.out.println("메뉴 입력:"); // 자판기 메뉴를 말함
             int menu = sc.nextInt();
-            System.out.println(product[menu - 1] + "이(가) 나왔다!");
-            choice = choice - price[menu - 1];
-            System.out.println("잔액:" + choice);
-            System.out.println(" 1:계속구매하기 2:금액추가하기 3:잔돈반환하기");
-            System.out.println("번호를 입력하세요:");
-            int num = sc.nextInt();
-            switch (num) {
-                case 1 :
-                    for (int i = 0; i < COUNT; i++) {
-                        if (choice < price[i]) {
+            for (int i = 0; i < COUNT; i++) {
+                int min = Integer.MAX_VALUE;
+                if (product[menu - 1] != null) {
+                    if (price[menu - 1] < min) {
+                        min = price[menu - 1];
+                        if (choice < min) {
                             System.out.println("잔액이 부족합니다!");
                             System.out.println("잔액:" + choice);
+                            return;
+                        } else {
+                            if (stock[menu - 1] != 0) {
+                                System.out.println(product[menu - 1] + "이(가) 나왔다!");
+                                choice = choice - price[menu - 1];
+                                stock[menu - 1] = stock[menu - 1] - 1;
+                                System.out.println("잔액:" + choice);
+                                sales[menu - 1] += price[menu - 1];
+                                return;
+                            } else {
+                                System.out.println("현재 해당물품은 재고가 없습니다.");
+                                return;
+                            }
                         }
-                        }
-
                     }
-                    continue;
-                case 2 :
-
-                case 3 :
-
+                }
             }
         }
     }
+
 
     private static void admin() {
         while (true) {
@@ -163,7 +204,7 @@ public class VendingMachineMain {
             // 무조건 대문자로 바꿔준다.
             yesOrNo = yesOrNo.toUpperCase();
             switch (yesOrNo) {
-                case "Y" :
+                case "Y":
                     String newMenu = "";
                     int newPrice = 0;
                     System.out.println("추가하실 메뉴의 가격을 입력하세요:");
@@ -182,7 +223,7 @@ public class VendingMachineMain {
                         }
                     }
                     break;
-                case "N" :
+                case "N":
                     System.out.println("관리자 메뉴로 돌아갑니다.");
                     break;
                 default:
@@ -207,8 +248,8 @@ public class VendingMachineMain {
             if (choice >= 1 && choice <= COUNT) {
                 if (product[choice - 1] != null) {
                     System.out.println(product[choice - 1] + "를(을) 몇 개 추가하시겠습니까?:");
-                    int updatePrice = sc.nextInt();
-                    price[choice - 1] = updatePrice;
+                    int updateStock = sc.nextInt();
+                    stock[choice - 1] =stock[choice - 1] + updateStock;
                     System.out.println("재고 추가가 완료되었습니다!");
                     getInfo();
                     continue;

@@ -1,0 +1,15 @@
+my_table
+id PK 자동증가,
+name 문자열(100)
+age 숫자 기본값 0
+
+먼저 쿼리를 적고 하기
+!!table 생성하기!!
+create table my_table(
+id bigint primary key auto_increment,
+name varchar(100) not null,
+age int default 0
+);
+
+잘못하고 오타나서
+빠져나가려면 ctrl + c로 빠져나감

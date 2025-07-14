@@ -1,0 +1,123 @@
+접근제한자
+1. public // 어디서나 접근 가능하다 어떤 패키지에서도 접근가능 일반적으로 이걸 붙힘
+2. 생략 (default) // 동일한 package
+3. protected // 동일한 package
+4. private // 클래스 내부에서만 사용 가능
+
+* class 는 대부분 public
+ㄴ src 폴더
+ㄴ package // 유사한 기능들을 갖고있는 자바파일들을 모아놓은 곳
+ㄴ dto(?) : data 구조
+ㄴ service : 기능
+ㄴ controller : web 접근
+ㄴ repository : 저장소연결(DB)
+
+클래스내부
+-> 특정한 구조를 가지고 사용
+- 멤버변수 private 로 선언한다.
+- Method(함수)
+
+class 이름 { 
+string name;
+int price;
+int sales;
+sum() {
+ sales = sales + price;
+ }
+}
+
+**약속 : class내부의 변수는 숨기자**
+ㄴ 변수값의 변경. 읽기는
+ㄴ Method를 통해서만 하자 
+ㄴ Getter, Setter를 넣어서 직접 못바꾸게 하자
+Setter : 외부에서 값을 전달해서 안에 있는 값을 수정하는것, public 이여야만 함, 항상 void.
+Getter : 다른 사람이 나의 내부적으로 가지고 있는 변수의 값을 쓰고자 할때, public 이여야만 함.
+*return이 들어가면 public옆에 무조건 return타입이 들어가있어야함.
+
+
+
+public class MegaCoffee { 
+private String name;
+private int price;
+// 외부에 접근이 불가능
+public String getName() {
+return this.name; // = private String name;를 가리킴
+ }
+// 외부로부터 받을게 없음, 내부에 있는 값을 알려주는 것
+public int getPrice() {
+return this.price; // = private int price;를 가리킴
+ } 
+// 이 두 pubilc은 Getter
+public void setName (String name) {
+// 관례적으로 class 안쪽에 전달되어지는 값들은 선언한 이름 그대로 씀
+this.name = name;
+ }
+public void setPrice (int price) {
+this.price = price;
+ }
+}
+=> 설계도
+-> 얘를 쓰기위해선 메모리를 들어올려야함
+-> static 혹은 new를 쓰면 됨
+
+(다른패키지에 있으면 import 앞에 붙여서 불러옴)
+public class CoffeeName {
+ public static void main(String[]args) {
+  MegaCoffee iceCoffee = new MagaCoffee();
+// iceCoffee는 instance, MegaCoffee는 class
+// iceCoffee가 instance인 이유는 껍데기만 있었는데 메모리에 올라왔으므로 instance가 됨
+// MegaCoffee는 호출하면 그제서야 메모리로 불러옴
+//  iceCoffee.name
+// name은 private를 썼으므로 보이지 않음
+// 따라서 public을 호출할 수 밖에 없음
+// 필요한 건 Setter를 불러와야함
+  iceCoffee.setName("아이스커피");
+// class안의 내부변수를 바꿔줌
+  iceCoffee.setPrice(2000);
+// iceCoffee.name는 변수, iceCoffee.name()는 함수
+  MegaCoffee megari = new MegaCoffee();
+// 설계도를 가지고 똑같은 놈을 또 만들어 메모리에다가
+// 그럼 steak에 megari가 생김
+// heap에 setName, setPrice
+// 메모리가 허용되는 무한대까지 만들 수 있음
+// MegaCoffee megari = new MegaCoffee(); = instance
+  megari.setName("메가리커피");
+  megari.setPrice(3000);
+  sout (iceCoffee.getPrice);
+// 불러올땐 get으로 불러옴
+// return을 통해 보내줌
+ }
+}
+=> 객체지향의 가장 기본적인 형태
+
+데이터의 타입은 int long 등
+MegaCoffee의 타입은 가격, 이름 등
+MegaCoffee 타입의 iceCoffee라는 instance 생성
+**new MegaCoffee()**
+-> class 이름에 함수가 붙은것을 "dafault 생성자(=construter)"라고함
+-> Method들을 메모리로 올려주는 역할을 함
+-> default 생성자는 자바에서 자동으로 만들어줌
+
+new MegaCoffee를 생성할때 
+**new MegaCoffee("카페라떼", 3800);**
+로 생성하고 싶을때
+-> 생성자를 별도로 만들어줘야함
+public MegaCoffee(String name, int price) {
+// 값이 들어간채로 생성함 -> 생성자
+// 클래스 이름과 똑같이 줌
+this.name = name;
+this.price = price;
+// class에 받아서 생성을 하면 Setter로 생성이 됨
+// 내가 만든생성자가 하나 있으면,
+// 밑의 생성자도 하나 무조건 만들어놔야
+// 오류가 생기지 않는다.
+}
+MegaCoffee() {
+// 기본으로 생성됨 ()는 비어있음
+// 워딩이라고 함
+// 위의 같이 값을 달라고 하는 생성자가 만들어졌으면
+// 이 생성자도 밑에 생성해놔야 오류가 나지 않는다.
+}
+
+List vab(?) - 배열과 유사하다고 함
+

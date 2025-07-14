@@ -1,0 +1,93 @@
+배운거 정리
+
+Java 17, 8 다운로드 및 설치 하기
+Intellij Community 다운로드 하기
+// 영어로 설정
+// Data 보내지 않기
+
+- Java 설정
+찾기 -> 시스템 환경 변수 편집
+환경 변수 Path 들어가서
+Java 17에 있는 것 삭제 후
+C:\Program Files\Java\jdk-17
+새로 추가 하기 + 위로 올리기
+
+Java 8 설치하고
+두버전이 나오는데 jdk-8로 윗파일 수정
+환경 변수 Path 들어가서
+Java 8에 있는 것 삭제 후
+환경 변수 JAVA_HOME 만든 후
+C:\Program Files\Java\jdk-8
+만듦
+
+환경 변수 Path 들어가서
+원래있던 자바 모두 삭제 후
+%JAVA_HOME%\bin
+새로 추가 하기 + 위로 올리기
+
+환경 변수 JAVA_HOME 들어가서
+Java 17 or 8로 jdk-17 or jdk-8로 변경하면
+어떤 버전으로 변경했냐에 따라
+cmd에 뜨는 자바 버전이 다름
+
+cmd 종료 후 재시작해서
+java -version
+17버전으로 설정했다면
+java version "17.0.12"
+8버전으로 설정했다면
+java version "8.0.12"
+라고 떠야함
+-> Java 세팅 완료
+
+- Intellji 설정
+Font 들어가서 
+Verdana 
+크기 20으로 세팅
+
+New Project 만들기
+myFirstProject 만들어서
+C드라이브 내파일 만들어서 저장해두고
+Create Git repository는 일단 설정X
+JDK 17로 설정
+Add sample code를 클릭 후 Create
+클래스 Main으로 만들기
+cmd 들어가서
+myFirstProject\src> 까지 들어가서
+myFirstProject\src> dir
+ C 드라이브의 볼륨에는 이름이 없습니다.
+ 볼륨 일련 번호: 10B3-878A
+
+ C:\soyeon\java-work\newMain\src 디렉터리
+
+2025-07-02  오후 12:01    <DIR>          .
+2025-07-02  오후 12:01    <DIR>          ..
+2025-07-02  오후 12:01               778 Main.java
+               1개 파일                 778 바이트
+               2개 디렉터리  179,632,402,432 바이트 남음
+// 라고 뜨면
+myFirstProject\src> javac Main.java
+myFirstProject\src> dir
+C 드라이브의 볼륨에는 이름이 없습니다.
+볼륨 일련 번호: 10B3-878A
+
+C:\soyeon\java-work\myFirstProject\src 디렉터리
+
+2025-06-26  오전 11:39    <DIR>          .
+2025-06-26  오전 11:39    <DIR>          ..
+2025-06-26  오전 11:39             1,009 Main.class
+2025-06-26  오전 11:01               778 Main.java
+2개 파일               1,787 바이트
+2개 디렉터리  181,556,047,872 바이트 남음
+// 이렇게 되면 Main.class가 폴더 안에 생성
+myFirstProject\src>java Main
+Hello and welcome!i = 1
+i = 2
+i = 3
+i = 4
+i = 5
+// 이렇게까지 뜨면 완료
+
+intellji 들어가서 다시 새로운 프로젝트 만들기
+-> Add sample code 없이 만들기
+
+=> 이제부터 작업시작!!

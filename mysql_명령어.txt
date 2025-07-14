@@ -1,0 +1,52 @@
+명령어
+
+
+mysql -uroot -p
+exit
+show databases;
+// 데이터 베이스를 보는 것
+show tables;
+use 데이터베이스 이름;
+desc 테이블 이름;
+// 테이블의 구조를 봄
+create database 이름;
+mysql dataType
+정수 : int, bigint, tinyint
+문자열 : char(size 고정) -- varchar(255 가변형)
+실수 : float, double
+날짜 : datetime, timestamp
+
+테이블 만들기
+create table test(
+id bigint primary key auto_increment,
+name varchar(20)
+);
+create table (테이블명)(
+(하위폴더 이름) bigint primary key auto_increment,
+name varchar(20)
+);
+// bigint 나 name 이런 것들은 본인이 정할 수 있음
+
+데이터 추가
+insert into test (name) values('김형민');
+insert into (테이블 명) (name) vlaues('김형민');
+
+입력한 데이터를 확인
+select * from test;
+select * from (테이블 명);
+
+테이블 내용 삭제
+delete from test;
+delete from (테이블명)
+
+테이블 구조 삭제
+drop table test;
+drop table (테이블명);
+
+데이터베이스를 삭제
+drop database DB이름; 
+
+Host : 127.0.0.1
+= 로컬호스트
+test_table
+0207Psy!

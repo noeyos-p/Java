@@ -1,0 +1,33 @@
+패키지 이름 관용적 규칙
+vo = Value Object
+service = 일반적인 기능을 호출사용, 구현
+
+MVC pattern - 기능별로 나누어서 처리
+M - Model(DB관련 CRUD기능) - service 패키지
+V - View(화면에 보여지는 것) 
+C - Control (http 요청 처리)
+=> 궁극적인 목적 : 일을 나눠서 하자
+
+@ : annotation
+
+
+dogFamily 프로젝트 생성
+- vo 패키지
+OurDog 클래스
+ kind 품종 -- 수정불가
+ name 개이름
+ color 색상
+ age 나이
+
+Getter Setter가 필요해요
+
+생성자 : 기본 생성자, 품종을 기본으로 갖는 생성자
+
+- main 패키지
+- DogMain 클래스
+강아지를 생성
+마르티즈 코코 흰색 2
+치와와 치치 검정 1
+리트리버 덩치 골드 3
+
+생성 후에 for를 이용해서 출력하기

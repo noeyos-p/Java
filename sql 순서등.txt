@@ -1,0 +1,71 @@
+mysql
+database create
+해당하는 db double 클릭
+
+database Data_Type
+int, big int, double, char(10), varchar(10), blob //2진수
+char은 형민만 들어가도 10칸 생김
+varchar 형민 들어면 2칸만 잡힘
+대부분 String을 저장할때 varchar를 씀
+255칸
+ 
+int, long, double, string, boolean
+
+table에있는 걸 찾는거
+select * table명
+drop table table명 하면 묻지도 따지지도 않고 지워짐
+
+
+**CMD 놓친부분 차례로**
+...
+select * from user;
+select host, user from user;
+
+exit
+mysql -utest_user -p
+비번 입력
+show databases;
+use mydb;
+show tables;
+delete * from test_table
+syntax 문법 오류
+delete from test_table
+exit
+
+(여기부터 사진있음)
+mysql -uroot -p
+1111
+use mydb;
+show tables;
+select * from test_table;
+delete from test_table;
+select * from test_table;
+drop table test_table;
+show tables;
+drop database mydb;
+show databases;
+create database mydb;
+show databases;
+use mydb;
+create table my_table(
+id bigint primary key auto_increment,
+name varchar(100) not null,
+age int default 0
+);
+desc my_table;
+insert into my_table
+(id, name, age)
+values(10, '홍길동', 10);
+select * from my_table;
+insert into my_table(id, name, age)
+values(1, '장원영', 20);
+select * from my_table;
+insert into my_table(id, name, age)
+values(1, '안유진', 20);
+insert into my_table(name, age)
+values('안유진', 22);
+select * from my_table;
+delete from my_table;
+drop table my_table;
+show databases;
+drop database mydb;

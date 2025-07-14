@@ -1,0 +1,53 @@
+class는 어떤 정보를 담고있는 집합체
+단순화 객체가 가지고 있는 특징을 뽑아내야함
+그 사람만 가지고 있는 개별적인 특성은 배제가되어야함
+공통적인 부분들만 우리를 모두가 사람이라ㅣ고 하는 부분을 
+모두가 다 대변할 수 이ㅜㅜㅆ는 특성들만 뽑아냄
+
+private한 애들을 지칭하는 애들이 this
+클래스 뒤에 괄호 생성자
+
+Car 라고하는 클래스
+model : 소나타, 그랜저, K5
+engine : 2000cc, 1500cc, 3000cc, 1000cc
+모델하고 엔진은 수정이 되면 안되는 멤버
+color
+speed
+// 얘는 member
+member : 값, method : 동작 -> 특정한 값을 바꾸는것
+
+
+axel : speed ++ 30키로 까지만
+break : speed --
+// 함수로함
+// 얘는 method
+
+List<e>제네릭?
+안에 같은 데이터 타입을 담고
+삭제할 수 있고 추가도 할 수도 있고
+검색도 항ㄹ 수도 있음
+<>안에 들어가있ㄴ는 것 제네릭
+문자의 타입을 물어보는 것임.
+class로 존재하면 타입이므로 안에 넣는게 가능함
+
+Type argument cannot be of a primitive type
+primitive type은 불가능 (int 등)
+Object만 가능함
+String은 대문자이므로 가능함
+
+List<String> colors = new ArrayList<>();
+        // 문법이다 생각하고 알아두자
+
+remove는 하나만 삭제하는 것 불리안타입 삭제에 성공하면트루실패하면 펄스
+remove (index) 가 붙는데 하나만 삭제할때 index0번쨰꺼 삭제해줘 안에 있는 오브젝트 자체를 가리켣ㅎ 삭제가능파란색마카 삭제해줘 도 가능
+addAll은 여러개 한거번에 집어넣는 것
+contains 이안에 들어있는지 없는지 확인할때 쓰는 불리안 타입
+isEmpty 비어있는ㄴ지 아닌지 확인함
+set 값을 넣어주는 데index에 엘리먼트 주니까 4번째에 뭐 넣어조 가능
+size이안에 몇개
+sort 정렬
+colors.get 읽는것
+colors.set 수정
+colors.remove 삭제
+
+1. 동전 투입  2. 잔돈 반환  3. 메뉴 선택  4. 관리자 메뉴  5. 종료 =>

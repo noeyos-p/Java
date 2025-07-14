@@ -1,0 +1,48 @@
+함수 만드는 방법
+- 반복적인 작업을 따로 분리
+- 함수를 호출만 하면 실행
+
+반환 할 타입 함수 이름(전달 할 값)
+void restCoinPrint(int a) {
+	해야할 일;
+}
+// 전달 할 타입도 알려줘야 함
+
+restCoin = restCoinPrint(restCoin, 1000);
+
+static int restCoinPrint(int restCoin, int don) {
+        System.out.println(don + "원 개수 : " + (restCoin / don));
+        restCoin = restCoin % don;
+        System.out.println("잔액  : " + restCoin);
+        return restCoin;
+
+3항 연산
+조건 ? 참 : 거짓;
+
+
+if (조건) {
+	조건이 참일때 실행
+} else {
+	조건이 거짓일 때 실행
+
+if (score >= 60) {
+// 합격일때
+System.out.println("축하")
+} else {
+System.out.println("다음 기회에")
+}
+
+만약에 너 점수가 90 이상이니?
+if(score >= 90) { 
+예 - 끝 A
+} else if {
+아니오 - 만약에 너 점수가 80 이상이니?
+
+예 - 끝 B
+아니오 - 만약에 너 점수가 70 이상이니?
+
+예 - 끝 C
+아니오 - 만약에 너 점수가 60 이상이니?
+
+예 - 끝 D
+아니오 - F

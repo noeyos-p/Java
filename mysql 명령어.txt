@@ -1,0 +1,40 @@
+mysql 명령어
+
+myslq -uroot -p
+show databases;
+use DB이름
+// database 선택
+show tables;
+desc aaa;
+// aaa table 구조 확인하기
+select field1, field2 from table_name
+where field2 >= 30 and field1 ='ok';
+(> < >= <= != and or not)
+
+%, _
+
+% = 모든 아이들 출력
+_ = 해당하는 하나 출력
+
+select * from city where city_name like %서울%;
+where rigion in('서울', '부산') : 지역이 서울 또는 부산
+where value between 10 and 20; : 10보다 크거나 같고, 20보다 작거나 같은
+order by name asc : 오름차순
+order by rigion asc, name desc : rigion 오름차순, desc 내림차순
+
+sum = 합계
+avg = 평균
+count = 몇갠지 세는거 
+max = 가장큰거
+mini = 가장 작은거
+
+소속별 status 값의 평균과 최대값, 최소값을 각각 출력
+
+지금 까지 한게 Read -> select 구문
+Create -> insert 구문
+Update -> update 구문
+Delete -> delete 구문
+
+drop은 안껴줌
+드롭은 구조를 날리는 애라 안껴줌
+딜리트는 데이터를 지우는 애임

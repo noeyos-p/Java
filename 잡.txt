@@ -1,0 +1,9 @@
+함수... 활용
+함수 : DB마다 사용방법이 또는 함수 이름이 다를 가능성이 있다.
+
+select
+update
+delete
+insert
+
+ANSI(안시) SQL
